@@ -6,12 +6,12 @@
 </description>
     <link>http://liaa.xyz/</link>
     <atom:link href="http://liaa.xyz/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 05 Nov 2015 10:57:51 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Nov 2015 10:57:51 +0800</lastBuildDate>
+    <pubDate>Thu, 05 Nov 2015 11:38:06 +0800</pubDate>
+    <lastBuildDate>Thu, 05 Nov 2015 11:38:06 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>On Building yunmax.me</title>
+        <title>On building yunmax.me</title>
         <description>&lt;p&gt;&lt;a href=&quot;http://yunmax.me&quot;&gt;运马网&lt;/a&gt; (http://yunmax.me) is a liner logistic(专线物流) O2O project. I am doing the frontend job. Here is the technology stack we have chosen.&lt;/p&gt;
 
 &lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
