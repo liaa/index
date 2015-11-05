@@ -6,9 +6,106 @@
 </description>
     <link>http://liaa.xyz/</link>
     <atom:link href="http://liaa.xyz/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 05 Nov 2015 11:38:06 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Nov 2015 11:38:06 +0800</lastBuildDate>
+    <pubDate>Thu, 05 Nov 2015 12:26:11 +0800</pubDate>
+    <lastBuildDate>Thu, 05 Nov 2015 12:26:11 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>浏览器滚动条引起页面抖动的解决方法</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;背景&lt;/h2&gt;
+&lt;p&gt;有两个页面使用同样的布局,CSS代码如下:   &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  body {
+    width: 500px;
+    margin: 0 auto;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中一个页面由于内容比较少页面不需要滚动,即不出现滚动条.另一个页面内容很多,出现垂直方向的滚动条. &lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;问题&lt;/h2&gt;
+&lt;p&gt;这时候在这两个页面之间切换会出现页面水平方向有微小移动,造成页面晃动的感觉, 视觉体验上感觉很不舒服.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;原因&lt;/h2&gt;
+&lt;p&gt;这是因为垂直方向的滚动条的出现占据了一定的宽度,导致两个页面&lt;code&gt;body&lt;/code&gt;元素的&lt;code&gt;margin&lt;/code&gt;属性的&lt;code&gt;auto&lt;/code&gt;的最终计算值不同. &lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;解决方法&lt;/h2&gt;
+&lt;p&gt;方法一:&lt;br /&gt;
+最简单粗暴的就是不管页面高度是多少全部都显示垂直方向的滚动条就好了:  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  body {
+    overflow-y: scroll;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;方法二:
+计算滚动条宽度, 待DOM加载完成后重新设定margin的值:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  ###
+   * This is a solution for preventing pagelayout
+   * (eg: body {margin: 0 auto})
+   * break when jumping between pages which have 
+   * the same layout but the one(the page height is enough) 
+   * have scrollbar and other have not scrollbar.
+   * @param  String innerEle The inner element who affected
+   * @param  String outerEle The outter element in which 
+   *                          the inner element placed, if 
+   *                          omit the default is window
+  ###
+  preventPageShakingFromScrollbar = (innerEle,outerEle)-&amp;gt;
+    # getScrollerWidth
+    scr = document.createElement(&#39;div&#39;)
+    scr.style.position = &#39;absolute&#39;
+    scr.style.top = &#39;-1000px&#39;
+    scr.style.left = &#39;-1000px&#39;
+    scr.style.width = &#39;100px&#39;
+    scr.style.height = &#39;50px&#39;
+    scr.style.overflow = &#39;hidden&#39;
+    inn = document.createElement(&#39;div&#39;)
+    inn.style.width = &#39;100%&#39;
+    inn.style.height = &#39;200px&#39;
+    scr.appendChild(inn)
+    document.body.appendChild(scr)
+    wNoScroll = inn.offsetWidth
+    scr.style.overflow = &#39;auto&#39;
+    wScroll = inn.offsetWidth
+    document.body.removeChild(
+        document.body.lastChild)
+    scrollerW = wNoScroll - wScroll
+
+    # is scrollbar exists
+    root = if document.compatMode==&#39;BackCompat&#39; then document.body else document.documentElement
+    isVerticalScrollbar= root.scrollHeight&amp;gt;root.clientHeight
+
+    outerEle = if outerEle then outerEle else window
+    # TODO: make code not depend on jQuery
+    $outerEle = $(outerEle)
+    $innerEle = $(innerEle)
+    containerW = $outerEle.width()
+    containeeW = $innerEle.outerWidth()
+    originML = (containerW - containeeW)/2
+    # console.log(originML)
+    # console.log(scrollerW)
+    # console.log(isVerticalScrollbar)
+    
+    if isVerticalScrollbar
+      $innerEle.css(&#39;marginLeft&#39;,originML+scrollerW/2)
+    else
+      $innerEle.css(&#39;marginLeft&#39;,originML)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;ps&quot;&gt;PS:&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;在写这个代码的时候发现要获得CSS属性auto解析出来的值需要用&lt;code&gt;window.getComputedStyle&lt;/code&gt;这个方法. 而不能通过&lt;code&gt;jQeury.css(&#39;marginLeft&#39;)&lt;/code&gt;这样来获得.&lt;/li&gt;
+  &lt;li&gt;在最新的(22.0)火狐浏览器中无法通过&lt;code&gt;window.getComputedStyle&lt;/code&gt;来或者这个&lt;code&gt;auto&lt;/code&gt;解析后的值.所以上面的代码人为的计算了解析后的值.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 05 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/%E8%A7%A3%E5%86%B3%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%A1%B5%E9%9D%A2%E6%8A%96%E5%8A%A8.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/%E8%A7%A3%E5%86%B3%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%BC%95%E8%B5%B7%E7%9A%84%E9%A1%B5%E9%9D%A2%E6%8A%96%E5%8A%A8.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>On building yunmax.me</title>
@@ -361,36 +458,6 @@ OC中的作用域大致可以分为以下几类:
         <pubDate>Sat, 03 Jan 2015 00:00:00 +0800</pubDate>
         <link>http://liaa.xyz/%E5%B1%95%E6%9C%9B2015.html</link>
         <guid isPermaLink="true">http://liaa.xyz/%E5%B1%95%E6%9C%9B2015.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Function naming: angleFromNorth</title>
-        <description>&lt;p&gt;Recently I encount a nice method name from &lt;a href=&quot;http://www.thinkandbuild.it/how-to-build-a-custom-control-in-ios/&quot;&gt;Bitwaker post&lt;/a&gt;, it look like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angleFromNorth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;and method implementation is like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;angleFromNorth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radians&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atan2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;180.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radians&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M_PI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;The reason I love this name is:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Using ‘NORTH’ states clearly Y-axis’s oriention is upward, so you can easy imagine the picture blow without confusion.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/500px-Cartesian-coordinate-system.svg.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 02 Jan 2015 00:00:00 +0800</pubDate>
-        <link>http://liaa.xyz/Function-Name:-angleFromNorth.html</link>
-        <guid isPermaLink="true">http://liaa.xyz/Function-Name:-angleFromNorth.html</guid>
         
         
       </item>
