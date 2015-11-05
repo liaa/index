@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing without honor</title>
+    <description>liaa.xyz 是陈亮的个人网站.
+</description>
+    <link>http://liaa.xyz/</link>
+    <atom:link href="http://liaa.xyz/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 05 Nov 2015 10:57:51 +0800</pubDate>
+    <lastBuildDate>Thu, 05 Nov 2015 10:57:51 +0800</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>On Building yunmax.me</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://yunmax.me&quot;&gt;运马网&lt;/a&gt; (http://yunmax.me) is a liner logistic(专线物流) O2O project. I am doing the frontend job. Here is the technology stack we have chosen.&lt;/p&gt;
+
+&lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Multiple-page web app architecture&lt;/li&gt;
+  &lt;li&gt;JS module with &lt;a href=&quot;https://webpack.github.io/&quot;&gt;webpack&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Automatical deployment with gulpJS and webpack&lt;/li&gt;
+  &lt;li&gt;Single purpose CSS selector inspired by &lt;a href=&quot;http://tachyons.io/&quot;&gt;Tachyons&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Sharing common code/constants between project with git submodule&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;Semantic development URL with &lt;a href=&quot;http://www.thekelleys.org.uk/dnsmasq/doc.html&quot;&gt;Dnsmasq&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Webstrom editor template for ReactJS development&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;multiple-page-web-app-architecture&quot;&gt;1. Multiple-page web app architecture&lt;/h2&gt;
+&lt;p&gt;Before we start the project we keep decorple(解耦) in mind by seperating frontend code and backend code. Basicly the backend provide restful apis for frontend to consume.&lt;/p&gt;
+
+&lt;p&gt;It is nature to make a SPA(single page application) that consume backend api. When things come to the multiple pages application some problem must be solve.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;How to remeber user login state&lt;/li&gt;
+  &lt;li&gt;How to pass data between pages&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;First question is easy, we store the user login information in cookie. Passing the infomation to server while making HTTP request.&lt;/p&gt;
+
+&lt;p&gt;Second question solved by store the data in URL. &lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 01 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/On_building_Yunmax.me.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/On_building_Yunmax.me.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Pattern of creating JS module for AMD, CommonJS, and Window global</title>
+        <description>&lt;p&gt;Here is a small snippet I learned from &lt;a href=&quot;https://github.com/dbushell/Pikaday&quot;&gt;Pikaday&lt;/a&gt; to define a module working in different module loader.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;object&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// CommonJS&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;function&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;amd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// AMD. Register as an anonymous module.&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;MyModule&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myModule&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;factory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myModule&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;More readings:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/umdjs/umd/blob/master/amdWeb.js&quot;&gt;amdWeb.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 09 Oct 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/JS_module_define_for_AMD_,_CommonJS_and_Browser_globals.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/JS_module_define_for_AMD_,_CommonJS_and_Browser_globals.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>NPM 使用小技巧</title>
+        <description>&lt;p&gt;这里记录一些实用的 NPM 小技巧. Enjoy ~&lt;/p&gt;
+
+&lt;h4 id=&quot;license&quot;&gt;1.设置默认 用户名, 邮箱, License&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;  npm set init-author-name &quot;foo&quot;
+  npm set init-author-email &quot;foo@email.com&quot;
+  npm set init-license &quot;MIT&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;save-exact&quot;&gt;2.开启 save-exact&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;  npm set save-exact true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dependencies saved to package.json using –save, –save-dev or –save-optional will be configured with &lt;strong&gt;an exact version&lt;/strong&gt; rather than using npm’s default semver range operator.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 28 Sep 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/NPM_tips.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/NPM_tips.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>小胖的夏天(2015)</title>
+        <description>&lt;p&gt;2015年暑假小胖来到一个创业型公司做技术实习. 暑期结束的时候他对一个技术主管(以下称A)说出了一番话:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  其实今年的暑假就是最有意义的暑假 认识了你们
+  这才叫活过
+  谈技术 不谈别的
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A陷入了深思:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;最有意义的暑假&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;首先A非常高兴小胖能够这样评价与自己渡过的这个暑假. 可能小胖觉得有意义是因为自己在网上找了实习，然后又通过实习学到了知识，认识了一些专业的程序员. 如果站在客观的角度来说, 小胖这个暑假学习到的知识, 接触到的人的技术应该都属于很普通的水平. 很难让人有 exciting 的感觉.  A觉得其实大学生(其实适用于所有人)应该多去接触新鲜事物，多去探索. 离开自己的 comfortable zone. &lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;谈技术, 不谈别的&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A一直认为会过生活的人才能把技术做好, A希望小胖不要认为技术是全部. 人们更愿意与易相处,热爱生活的人一起共事, 一起进步.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 28 Sep 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Travelling in SanYa</title>
+        <description>&lt;p&gt;In 2015.05.03 me and my family have a trip to SanYa.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-good-part&quot;&gt;The good part:&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Beautiful beach and sea.&lt;/li&gt;
+  &lt;li&gt;Holiday hotel is the second home.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;the-bad-part&quot;&gt;The bad part:&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Food. Not tasting good and expensive.&lt;/li&gt;
+  &lt;li&gt;Scenic spots. Not attractive and not develop well and expensive.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;some-advices&quot;&gt;Some advices:&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Sea, beach and hotel is enough for a relexing holiday, do not go to scenic spots. &lt;/li&gt;
+  &lt;li&gt;If you don’t like the food outside the hotel, try some in the hotel.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20150529/beach.JPG&quot; alt=&quot;beach&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20150529/tree.JPG&quot; alt=&quot;tree&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/20150529/house.JPG&quot; alt=&quot;house&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 29 May 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/Travelling%20in%20SanYa.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/Travelling%20in%20SanYa.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Objective-C 变量类型以及作用域</title>
+        <description>&lt;p&gt;这个系列将介绍 Objective-C 中不同的变量类型以及他们的作用域.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;/OC-变量类型之Static-Global.html&quot;&gt;Static Global Variable&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Static Local Variable&lt;/li&gt;
+  &lt;li&gt;Extern Global Varaible&lt;/li&gt;
+  &lt;li&gt;Local Variable&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Links:&lt;br /&gt;
+* &lt;a href=&quot;http://nshipster.com/c-storage-classes/&quot;&gt;C Storage Classes&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- OC中变量类型大致可以分为以下几类:
+
+* local variable
+* static local variable
+* instance variable
+* global variable
+  * static global variable
+  * extern global variable
+
+OC中的作用域大致可以分为以下几类:
+
+* block scope
+* static global scope (file scope)
+* extern global scope
+* file scope
+
+ --&gt;
+
+</description>
+        <pubDate>Sat, 09 May 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/Objective-C-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/Objective-C-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Objective-C Static Global  Variable</title>
+        <description>&lt;h3 id=&quot;static-global-variable-&quot;&gt;Static global variable 是啥&lt;/h3&gt;
+&lt;p&gt;在 Objective-C 中我们这样定义一个 &lt;code&gt;global static variable&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;static int myStaticGlobalInt = 0;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意上面段代码并不放在任何&lt;code&gt;{}&lt;/code&gt;之间,否则定义的是一个&lt;code&gt;static local variable&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;static-global-variable--1&quot;&gt;Static global variable 的作用域&lt;/h3&gt;
+
+&lt;p&gt;以上面那段代码为列子,在 myStaticGlobalInt 声明的文件中的任何地方都可以访问到它,比如:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  -(void) methodOne {
+     myStaticGlobalInt++
+  }  
+
+  -(void) methodTwo {
+     myStaticGlobalInt++
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;static-global-variable--2&quot;&gt;Static global variable 的生命周期&lt;/h3&gt;
+
+&lt;p&gt;在 ExampleObject 对象中声明一个 static global variable:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// ExampleObject.m
+@interface ExampleObject()
+@end
+static int myInt = 10;
+
+-(void) increaseMyInt
+{
+  myInt++;
+}
+-(void) printMyInt
+{
+  NSLog(@&quot;myInt is %i&quot;, myInt);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后执行:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ExampleObject *obj = [ExampleObject alloc] init];
+[obj increaseMyInt];
+[obj printMyInt];
+ExampleObject *obj2 = [ExampleObject alloc] init];
+[obj2 printMyInt]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;得到以下结果:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&quot;myInt is 11&quot;
+&quot;myInt is 11&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;static global variable&lt;/code&gt; 一旦被创建就会一直存在. 下次访问时会得到最近一次被赋予的值.&lt;/p&gt;
+
+&lt;!-- OC中变量类型大致可以分为以下几类:
+
+* local variable
+* static local variable
+* instance variable
+* global variable
+  * static global variable
+  * extern global variable
+
+OC中的作用域大致可以分为以下几类:
+
+* block scope
+* static global scope (file scope)
+* extern global scope
+* file scope
+
+
+
+ --&gt;
+</description>
+        <pubDate>Sat, 09 May 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>接下来5年我要做什么</title>
+        <description>&lt;p&gt;如果你想知道的话，那么5年内我想做的事情大概是这些：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;结婚生子，希望是好多好多孩子&lt;/li&gt;
+  &lt;li&gt;做一个很简单的创业项目：用户将自己喜爱的图片上传,我负责提供用户喜欢的表现形式处理图片然后送到用户手里&lt;/li&gt;
+  &lt;li&gt;参与一些普及教育和一些帮助学习的开发项目中&lt;/li&gt;
+  &lt;li&gt;学习数据挖掘处理相关的知识，并运用之&lt;/li&gt;
+  &lt;li&gt;英语水平达到不去误人子弟的程度，并且要参与英语教育相关的活动中去&lt;/li&gt;
+  &lt;li&gt;努力能成为一名&lt;del&gt;有核心竞争力的&lt;/del&gt;soho程序员&lt;/li&gt;
+  &lt;li&gt;学习日语&lt;/li&gt;
+  &lt;li&gt;去更多的地方&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;就是这些了。&lt;/p&gt;
+
+&lt;p&gt;等等还差了重要的一个:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;反省&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 12 Feb 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/%E6%88%91%E6%8E%A5%E4%B8%8B%E5%87%A0%E5%B9%B4%E6%83%B3%E5%81%9A%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E4%BA%8B%E6%83%85.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/%E6%88%91%E6%8E%A5%E4%B8%8B%E5%87%A0%E5%B9%B4%E6%83%B3%E5%81%9A%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E4%BA%8B%E6%83%85.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>2015 计划</title>
+        <description>&lt;p&gt;2015年计划:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;调整身体状态: 体重, 睡眠, 作息&lt;/li&gt;
+  &lt;li&gt;补习Cocoa开发中与C语言相关的知识点&lt;/li&gt;
+  &lt;li&gt;完成designcode.io上的设计课程&lt;/li&gt;
+  &lt;li&gt;做一些设计相关的工作&lt;/li&gt;
+  &lt;li&gt;完成motion design课程&lt;/li&gt;
+  &lt;li&gt;英语词汇背诵,语法学习&lt;/li&gt;
+  &lt;li&gt;每月一篇英文blog&lt;/li&gt;
+  &lt;li&gt;用上iMac27 5K&lt;/li&gt;
+  &lt;li&gt;每月写一个与Core Animation相关的demo&lt;/li&gt;
+  &lt;li&gt;完成一个声音片段收集app, 并以0000ff的商标发布&lt;/li&gt;
+  &lt;li&gt;做一件T恤上面放一个emoji表情👻&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;干完正事回顾一下我的2014年.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2月份开始了iOS开发,9月份第一个app上线&lt;/li&gt;
+  &lt;li&gt;11月公司的业务牵涉到法律问题接受相关调查&lt;/li&gt;
+  &lt;li&gt;11月在隔壁邻居的婚礼上做伴郎，第一次有了想结婚的想法&lt;/li&gt;
+  &lt;li&gt;12月份从第一家公司离职&lt;/li&gt;
+  &lt;li&gt;12月份加入一家新公司专职做iOS开发&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 03 Jan 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/%E5%B1%95%E6%9C%9B2015.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/%E5%B1%95%E6%9C%9B2015.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Function naming: angleFromNorth</title>
+        <description>&lt;p&gt;Recently I encount a nice method name from &lt;a href=&quot;http://www.thinkandbuild.it/how-to-build-a-custom-control-in-ios/&quot;&gt;Bitwaker post&lt;/a&gt;, it look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angleFromNorth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and method implementation is like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;angleFromNorth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;CGPoint&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radians&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;atan2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;180.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radians&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M_PI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;The reason I love this name is:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Using ‘NORTH’ states clearly Y-axis’s oriention is upward, so you can easy imagine the picture blow without confusion.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Cartesian-coordinate-system.svg/500px-Cartesian-coordinate-system.svg.png&quot; alt=&quot;alt text&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 02 Jan 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/Function-Name:-angleFromNorth.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/Function-Name:-angleFromNorth.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
