@@ -64,10 +64,10 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #2a7ae2;
+  color: #0000ff;
   text-decoration: none; }
   a:visited {
-    color: #1756a9; }
+    color: #0000b3; }
   a:hover {
     color: #111;
     text-decoration: underline; }
@@ -127,6 +127,11 @@ pre {
  * Clearfix
  */
 .wrapper:after, .footer-col-wrapper:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.cf:after {
   content: "";
   display: table;
   clear: both; }
@@ -268,6 +273,8 @@ pre {
   list-style: none; }
   .post-list > li {
     margin-bottom: 30px; }
+  .post-list h2 {
+    margin-bottom: 0px; }
 
 .post-meta {
   font-size: 14px;
@@ -275,7 +282,8 @@ pre {
 
 .post-link {
   display: block;
-  font-size: 24px; }
+  font-size: 24px;
+  letter-spacing: 0.5px; }
 
 /**
  * Posts
