@@ -6,9 +6,30 @@
 </description>
     <link>http://liaa.xyz/</link>
     <atom:link href="http://liaa.xyz/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 21 Nov 2015 09:12:13 +0800</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2015 09:12:13 +0800</lastBuildDate>
+    <pubDate>Mon, 30 Nov 2015 08:24:31 +0800</pubDate>
+    <lastBuildDate>Mon, 30 Nov 2015 08:24:31 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>英语词汇量测试记录(始于2015)</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;2015年: 3,970 &lt;a href=&quot;http://testyourvocab.com/result?user=5973411&quot;&gt;详情&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;PS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;词汇量测试网址: &lt;a href=&quot;http://testyourvocab.com/&quot;&gt;testyourvocab&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;目前用来背单词的工具: &lt;a href=&quot;http://langeasy.com.cn/mobile/lexis.jsp&quot;&gt;不背单词&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 30 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E9%87%8F%E6%B5%8B%E8%AF%95%E5%B9%B4%E8%AE%B0%E5%BD%95.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E9%87%8F%E6%B5%8B%E8%AF%95%E5%B9%B4%E8%AE%B0%E5%BD%95.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>浏览器滚动条引起页面抖动的解决方法</title>
@@ -181,8 +202,13 @@
       </item>
     
       <item>
-        <title>NPM 使用小技巧</title>
-        <description>&lt;p&gt;这里记录一些实用的 NPM 小技巧. Enjoy ~&lt;/p&gt;
+        <title></title>
+        <description>&lt;p&gt;layout: post
+title: NPM 使用小技巧
+—
+title: NPM 使用小技巧
+—
+这里记录一些实用的 NPM 小技巧. Enjoy ~&lt;/p&gt;
 
 &lt;h4 id=&quot;license&quot;&gt;1.设置默认 用户名, 邮箱, License&lt;/h4&gt;
 
@@ -422,42 +448,6 @@ OC中的作用域大致可以分为以下几类:
         <pubDate>Thu, 12 Feb 2015 00:00:00 +0800</pubDate>
         <link>http://liaa.xyz/%E6%88%91%E6%8E%A5%E4%B8%8B%E5%87%A0%E5%B9%B4%E6%83%B3%E5%81%9A%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E4%BA%8B%E6%83%85.html</link>
         <guid isPermaLink="true">http://liaa.xyz/%E6%88%91%E6%8E%A5%E4%B8%8B%E5%87%A0%E5%B9%B4%E6%83%B3%E5%81%9A%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E4%BA%8B%E6%83%85.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>2015 计划</title>
-        <description>&lt;p&gt;2015年计划:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;调整身体状态: 体重, 睡眠, 作息&lt;/li&gt;
-  &lt;li&gt;补习Cocoa开发中与C语言相关的知识点&lt;/li&gt;
-  &lt;li&gt;完成designcode.io上的设计课程&lt;/li&gt;
-  &lt;li&gt;做一些设计相关的工作&lt;/li&gt;
-  &lt;li&gt;完成motion design课程&lt;/li&gt;
-  &lt;li&gt;英语词汇背诵,语法学习&lt;/li&gt;
-  &lt;li&gt;每月一篇英文blog&lt;/li&gt;
-  &lt;li&gt;用上iMac27 5K&lt;/li&gt;
-  &lt;li&gt;每月写一个与Core Animation相关的demo&lt;/li&gt;
-  &lt;li&gt;完成一个声音片段收集app, 并以0000ff的商标发布&lt;/li&gt;
-  &lt;li&gt;做一件T恤上面放一个emoji表情👻&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;干完正事回顾一下我的2014年.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;2月份开始了iOS开发,9月份第一个app上线&lt;/li&gt;
-  &lt;li&gt;11月公司的业务牵涉到法律问题接受相关调查&lt;/li&gt;
-  &lt;li&gt;11月在隔壁邻居的婚礼上做伴郎，第一次有了想结婚的想法&lt;/li&gt;
-  &lt;li&gt;12月份从第一家公司离职&lt;/li&gt;
-  &lt;li&gt;12月份加入一家新公司专职做iOS开发&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sat, 03 Jan 2015 00:00:00 +0800</pubDate>
-        <link>http://liaa.xyz/%E5%B1%95%E6%9C%9B2015.html</link>
-        <guid isPermaLink="true">http://liaa.xyz/%E5%B1%95%E6%9C%9B2015.html</guid>
         
         
       </item>
