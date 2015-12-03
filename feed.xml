@@ -6,9 +6,55 @@
 </description>
     <link>http://liaa.xyz/</link>
     <atom:link href="http://liaa.xyz/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 30 Nov 2015 08:24:31 +0800</pubDate>
-    <lastBuildDate>Mon, 30 Nov 2015 08:24:31 +0800</lastBuildDate>
+    <pubDate>Thu, 03 Dec 2015 19:05:46 +0800</pubDate>
+    <lastBuildDate>Thu, 03 Dec 2015 19:05:46 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>前端项目开发的几个场景</title>
+        <description>&lt;p&gt;这里总结我自己的前端项目开发的过程的几个场景:&lt;/p&gt;
+
+&lt;h2 id=&quot;dev-&quot;&gt;1. dev (开发场景)&lt;/h2&gt;
+
+&lt;p&gt;纯正开发模式. &lt;/p&gt;
+
+&lt;h2 id=&quot;release-&quot;&gt;2. release (发布场景)&lt;/h2&gt;
+
+&lt;p&gt;release 场景下需要做的事情:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;代码编译&lt;/li&gt;
+  &lt;li&gt;代码压缩&lt;/li&gt;
+  &lt;li&gt;发布到线上环境&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;testrelease-&quot;&gt;3. testRelease (测试发布场景)&lt;/h2&gt;
+
+&lt;p&gt;模拟真实线上环境的发布, 不过只是在测试服务器上发布.
+这个场景下就可以让测试人员来参黑合测试了.&lt;/p&gt;
+
+&lt;h2 id=&quot;release-preview-&quot;&gt;4. release-preview (发布预览场景)&lt;/h2&gt;
+
+&lt;p&gt;这是介于 dev 与 release 之间的一步, 这个过程发生在开发这自己的电脑上. 相当与在开发者自己电脑上 simuRelease 一次. 开发者先检查一下有无明显的问题.&lt;/p&gt;
+
+&lt;p&gt;通过上面的分类我可以使用更加符合语义的 npm script 了如:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  &amp;gt; npm run dev                     // &quot;写代码去了&quot;
+
+  &amp;gt; npm run release                 // &quot;天啦噜, 终于发布啦&quot;
+
+  &amp;gt; npm run testRelease             // &quot;测试的兄弟们, 我已经部署到内网测试了, 你们看下有什么问题&quot;
+
+  &amp;gt; npm run release-preview         // &quot;终于写完了, 检查看下有没问题先, 等下就可以交给测试了&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+        <pubDate>Thu, 03 Dec 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E9%98%B6%E6%AE%B5%E5%88%92%E5%88%86.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E9%98%B6%E6%AE%B5%E5%88%92%E5%88%86.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>英语词汇量测试记录(始于2015)</title>
@@ -202,13 +248,8 @@
       </item>
     
       <item>
-        <title></title>
-        <description>&lt;p&gt;layout: post
-title: NPM 使用小技巧
-—
-title: NPM 使用小技巧
-—
-这里记录一些实用的 NPM 小技巧. Enjoy ~&lt;/p&gt;
+        <title>NPM 使用小技巧</title>
+        <description>&lt;p&gt;这里记录一些实用的 NPM 小技巧. Enjoy ~&lt;/p&gt;
 
 &lt;h4 id=&quot;license&quot;&gt;1.设置默认 用户名, 邮箱, License&lt;/h4&gt;
 
@@ -417,37 +458,6 @@ OC中的作用域大致可以分为以下几类:
         <pubDate>Sat, 09 May 2015 00:00:00 +0800</pubDate>
         <link>http://liaa.xyz/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html</link>
         <guid isPermaLink="true">http://liaa.xyz/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>接下来5年我要做什么</title>
-        <description>&lt;p&gt;如果你想知道的话，那么5年内我想做的事情大概是这些：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;结婚生子，希望是好多好多孩子&lt;/li&gt;
-  &lt;li&gt;做一个很简单的创业项目：用户将自己喜爱的图片上传,我负责提供用户喜欢的表现形式处理图片然后送到用户手里&lt;/li&gt;
-  &lt;li&gt;参与一些普及教育和一些帮助学习的开发项目中&lt;/li&gt;
-  &lt;li&gt;学习数据挖掘处理相关的知识，并运用之&lt;/li&gt;
-  &lt;li&gt;英语水平达到不去误人子弟的程度，并且要参与英语教育相关的活动中去&lt;/li&gt;
-  &lt;li&gt;努力能成为一名&lt;del&gt;有核心竞争力的&lt;/del&gt;soho程序员&lt;/li&gt;
-  &lt;li&gt;学习日语&lt;/li&gt;
-  &lt;li&gt;去更多的地方&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;就是这些了。&lt;/p&gt;
-
-&lt;p&gt;等等还差了重要的一个:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;反省&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Thu, 12 Feb 2015 00:00:00 +0800</pubDate>
-        <link>http://liaa.xyz/%E6%88%91%E6%8E%A5%E4%B8%8B%E5%87%A0%E5%B9%B4%E6%83%B3%E5%81%9A%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E4%BA%8B%E6%83%85.html</link>
-        <guid isPermaLink="true">http://liaa.xyz/%E6%88%91%E6%8E%A5%E4%B8%8B%E5%87%A0%E5%B9%B4%E6%83%B3%E5%81%9A%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E4%BA%8B%E6%83%85.html</guid>
         
         
       </item>

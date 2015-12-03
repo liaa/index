@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>NPM 使用小技巧</title>
+    <title>前端项目开发的几个场景</title>
     <meta name="description" content="liaa.xyz 是陈亮的个人网站.
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://liaa.xyz/NPM_tips.html">
+    <link rel="canonical" href="http://liaa.xyz/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E9%98%B6%E6%AE%B5%E5%88%92%E5%88%86.html">
 </head>
 
 
@@ -57,26 +57,46 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">NPM 使用小技巧</h1>
-    <p class="post-meta">Sep 28, 2015</p>
+    <h1 class="post-title">前端项目开发的几个场景</h1>
+    <p class="post-meta">Dec 3, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>这里记录一些实用的 NPM 小技巧. Enjoy ~</p>
+    <p>这里总结我自己的前端项目开发的过程的几个场景:</p>
 
-<h4 id="license">1.设置默认 用户名, 邮箱, License</h4>
+<h2 id="dev-">1. dev (开发场景)</h2>
 
-<pre><code>  npm set init-author-name "foo"
-  npm set init-author-email "foo@email.com"
-  npm set init-license "MIT"
+<p>纯正开发模式. </p>
+
+<h2 id="release-">2. release (发布场景)</h2>
+
+<p>release 场景下需要做的事情:</p>
+
+<ol>
+  <li>代码编译</li>
+  <li>代码压缩</li>
+  <li>发布到线上环境</li>
+</ol>
+
+<h2 id="testrelease-">3. testRelease (测试发布场景)</h2>
+
+<p>模拟真实线上环境的发布, 不过只是在测试服务器上发布.
+这个场景下就可以让测试人员来参黑合测试了.</p>
+
+<h2 id="release-preview-">4. release-preview (发布预览场景)</h2>
+
+<p>这是介于 dev 与 release 之间的一步, 这个过程发生在开发这自己的电脑上. 相当与在开发者自己电脑上 simuRelease 一次. 开发者先检查一下有无明显的问题.</p>
+
+<p>通过上面的分类我可以使用更加符合语义的 npm script 了如:</p>
+
+<pre><code>  &gt; npm run dev                     // "写代码去了"
+
+  &gt; npm run release                 // "天啦噜, 终于发布啦"
+
+  &gt; npm run testRelease             // "测试的兄弟们, 我已经部署到内网测试了, 你们看下有什么问题"
+
+  &gt; npm run release-preview         // "终于写完了, 检查看下有没问题先, 等下就可以交给测试了"
 </code></pre>
-
-<h4 id="save-exact">2.开启 save-exact</h4>
-
-<pre><code>  npm set save-exact true
-</code></pre>
-
-<p>Dependencies saved to package.json using –save, –save-dev or –save-optional will be configured with <strong>an exact version</strong> rather than using npm’s default semver range operator.</p>
 
 
     <div id="disqus_thread"></div>
