@@ -81,11 +81,11 @@
 <h2 id="testrelease-">3. testRelease (测试发布场景)</h2>
 
 <p>模拟真实线上环境的发布, 不过只是在测试服务器上发布.
-这个场景下就可以让测试人员来参黑合测试了.</p>
+这个场景下就可以让测试人员来参黑盒测试了.</p>
 
 <h2 id="release-preview-">4. release-preview (发布预览场景)</h2>
 
-<p>这是介于 dev 与 release 之间的一步, 这个过程发生在开发这自己的电脑上. 相当与在开发者自己电脑上 simuRelease 一次. 开发者先检查一下有无明显的问题.</p>
+<p>这是介于 dev 与 release-preview(或release) 之间的一步, 这个过程发生在开发者的电脑上. 相当于在开发者自己电脑上 testRelease 一次. 开发者先检查一下有无明显的问题.</p>
 
 <p>通过上面的分类我可以使用更加符合语义的 npm script 了如:</p>
 
