@@ -64,6 +64,17 @@
   <article class="post-content">
     <p>这里总结我自己的前端项目开发的过程的几个场景:</p>
 
+<p>通过下面的分类我可以使用更加符合语义的 npm script 了如:</p>
+
+<pre><code>  &gt; npm run dev                     // "写代码去了"
+
+  &gt; npm run release-preview         // "终于写完了, 检查看下有没问题先, 等下就可以交给测试了"
+
+  &gt; npm run testRelease             // "测试的兄弟们, 我已经部署到内网测试了, 你们看下有什么问题"
+
+  &gt; npm run release                 // "天啦噜, 终于发布啦"
+</code></pre>
+
 <h2 id="dev-">1. dev (开发场景)</h2>
 
 <p>纯正开发模式. </p>
@@ -86,17 +97,6 @@
 <h2 id="release-preview-">4. release-preview (发布预览场景)</h2>
 
 <p>这是介于 dev 与 release-preview(或release) 之间的一步, 这个过程发生在开发者的电脑上. 相当于在开发者自己电脑上 testRelease 一次. 开发者先检查一下有无明显的问题.</p>
-
-<p>通过上面的分类我可以使用更加符合语义的 npm script 了如:</p>
-
-<pre><code>  &gt; npm run dev                     // "写代码去了"
-
-  &gt; npm run release                 // "天啦噜, 终于发布啦"
-
-  &gt; npm run testRelease             // "测试的兄弟们, 我已经部署到内网测试了, 你们看下有什么问题"
-
-  &gt; npm run release-preview         // "终于写完了, 检查看下有没问题先, 等下就可以交给测试了"
-</code></pre>
 
 
     <div id="disqus_thread"></div>
