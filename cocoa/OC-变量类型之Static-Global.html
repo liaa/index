@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>liaa write this blog</title>
+    <title>Objective-C 变量以及作用域教程二: Static Global Variable</title>
     <meta name="description" content="liaa.xyz 是陈亮的个人网站.陈亮目前主要从事iOS开发
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://liaa.xyz/">
+    <link rel="canonical" href="http://liaa.xyz/cocoa/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html">
 </head>
 
 
@@ -45,125 +45,111 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Nov 30, 2015</span>
+  <header class="post-header">
+    <h1 class="post-title">Objective-C 变量以及作用域教程二: Static Global Variable</h1>
+    <p class="post-meta">May 10, 2015</p>
+  </header>
 
-        <h2>
-          <a class="post-link" href="/english/%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E9%87%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95.html">英语词汇量测试记录(始于2015)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Nov 5, 2015</span>
+  <article class="post-content">
+    <h3 id="static-global-variable-">Static global variable 是啥</h3>
+<p>在 Objective-C 中我们这样定义一个 <code class="highlighter-rouge">global static variable</code>:</p>
 
-        <h2>
-          <a class="post-link" href="/web/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%BC%95%E8%B5%B7%E9%A1%B5%E9%9D%A2%E6%8A%96%E5%8A%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html">浏览器滚动条引起页面抖动的解决方法</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 9, 2015</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>static int myStaticGlobalInt = 0;
+</code></pre>
+</div>
 
-        <h2>
-          <a class="post-link" href="/web/AMD_CommonJS_Browser_global_module_pattern.html">Javascript module that compatible with AMD, CommonJS, and Window global</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2015</span>
+<p>注意上面段代码并不放在任何<code class="highlighter-rouge"><span class="p">{}</span></code>之间,否则定义的是一个<code class="highlighter-rouge">static local variable</code>.</p>
 
-        <h2>
-          <a class="post-link" href="/web/NPM_tips.html">NPM 使用小技巧</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 28, 2015</span>
+<h3 id="static-global-variable--1">Static global variable 的作用域</h3>
 
-        <h2>
-          <a class="post-link" href="/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html">小胖的夏天(2015)</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 29, 2015</span>
+<p>以上面那段代码为列子,在 myStaticGlobalInt 声明的文件中的任何地方都可以访问到它,比如:</p>
 
-        <h2>
-          <a class="post-link" href="/Travelling-in-SanYa.html">Travelling in SanYa</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 10, 2015</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>  -(void) methodOne {
+     myStaticGlobalInt++
+  }  
 
-        <h2>
-          <a class="post-link" href="/cocoa/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html">Objective-C 变量以及作用域教程二: Static Global Variable</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 9, 2015</span>
+  -(void) methodTwo {
+     myStaticGlobalInt++
+  }
+</code></pre>
+</div>
 
-        <h2>
-          <a class="post-link" href="/cocoa/Objective-C-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">Objective-C 变量以及作用域教程一: 介绍</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 12, 2015</span>
+<h3 id="static-global-variable--2">Static global variable 的生命周期</h3>
 
-        <h2>
-          <a class="post-link" href="/%E6%88%91%E6%8E%A5%E4%B8%8B%E5%87%A0%E5%B9%B4%E6%83%B3%E5%81%9A%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E4%BA%8B%E6%83%85.html">接下来5年我要做什么</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 3, 2015</span>
+<p>在 ExampleObject 对象中声明一个 static global variable:</p>
 
-        <h2>
-          <a class="post-link" href="/%E5%B1%95%E6%9C%9B2015.html">2015 计划</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jan 2, 2015</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">// ExampleObject.m
+</span><span class="k">@interface</span> <span class="nc">ExampleObject</span><span class="p">()</span>
+<span class="k">@end</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">myInt</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
-        <h2>
-          <a class="post-link" href="/Function-Name-angleFromNorth.html">Function name: angleFromNorth</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 27, 2014</span>
+<span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">increaseMyInt</span>
+<span class="p">{</span>
+  <span class="n">myInt</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">printMyInt</span>
+<span class="p">{</span>
+  <span class="n">NSLog</span><span class="p">(</span><span class="s">@"myInt is %i"</span><span class="p">,</span> <span class="n">myInt</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-        <h2>
-          <a class="post-link" href="/cocoa/What's-in-my-View-Controller.html">What's In My UIViewController</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Oct 25, 2014</span>
+<p>然后执行:</p>
 
-        <h2>
-          <a class="post-link" href="/I-just-start-blogging.html">I Just Start Blogging</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Sep 10, 2014</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>ExampleObject *obj = [ExampleObject alloc] init];
+[obj increaseMyInt];
+[obj printMyInt];
+ExampleObject *obj2 = [ExampleObject alloc] init];
+[obj2 printMyInt]
+</code></pre>
+</div>
 
-        <h2>
-          <a class="post-link" href="/others/How-do-I-learn-skateboarding.html">How Do I Learn Skateboarding</a>
-        </h2>
-      </li>
-    
-  </ul>
+<p>得到以下结果:</p>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>"myInt is 11"
+"myInt is 11"
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">static global variable</code> 一旦被创建就会一直存在. 下次访问时会得到最近一次被赋予的值.</p>
+
+<!-- OC中变量类型大致可以分为以下几类:
+
+* local variable
+* static local variable
+* instance variable
+* global variable
+  * static global variable
+  * extern global variable
+
+OC中的作用域大致可以分为以下几类:
+
+* block scope
+* static global scope (file scope)
+* extern global scope
+* file scope
+
+
+
+ -->
+
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'kidliaacom'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </article>
+
 
 </div>
 

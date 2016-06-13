@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>How Do I Learn Skateboarding</title>
-    <meta name="description" content="liaa.xyz 是陈亮的个人网站.
+    <title>Speaking Jekyll</title>
+    <meta name="description" content="liaa.xyz 是陈亮的个人网站.陈亮目前主要从事iOS开发
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://liaa.xyz/How-do-I-learn-skateboarding.html">
+    <link rel="canonical" href="http://liaa.xyz/speaking jekyll/">
 </head>
 
 
@@ -21,7 +21,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">writing without honor</a>
+    <a class="site-title" href="/">liaa write this blog</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -33,17 +33,8 @@
       </a>
 
       <div class="trigger">
-        
-          
-          <a class="page-link" href="/about/">About</a>
-          
-        
-          
-        
-          
-        
-          
-        
+          <a href="/category/" class="page-link">Category</a>
+          <a href="/about/" class="page-link">About</a>
       </div>
     </nav>
 
@@ -57,56 +48,29 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">How Do I Learn Skateboarding</h1>
-    <p class="post-meta">Sep 10, 2014</p>
+    <h1 class="post-title">Speaking Jekyll</h1>
   </header>
 
   <article class="post-content">
-    <h2 id="steps-that-i-take-from-beginer-to-whatever">Steps that I take from beginer to …(whatever)</h2>
+    <p>Notes of how to use <a href="http://jekyllrb.com/docs/structure/">Jeklly</a>.</p>
 
-<ol>
-  <li>I really don’t know what I do the very first time</li>
-  <li>I do fake falling</li>
-  <li>I parctice pushing and on boarding</li>
-  <li>I parctice pushing and keep balance with front foot on the board</li>
-  <li>Watching video about how to fall properly, but not implement it</li>
-  <li>Watching video about how to stop</li>
-  <li>I parctice how to tic tac </li>
-  <li>Going to learn “nosestalls”</li>
-  <li>Going to learn “ollie”</li>
-</ol>
+<h3 id="providing-data-for-template-variable-as-sitedatamycustomdatas">Providing data for template variable as <code class="highlighter-rouge">site.data.myCustomDatas</code></h3>
 
-<h2 id="tutorials-that-help-me-a-lot">Tutorials that help me a lot</h2>
-<ul>
-  <li><a href="http://www.board-crazy.co.uk/skateboarding_beginners_2.php">How to tic tacs</a></li>
-</ul>
+<p>Well-formatted site data should be placed here. The jekyll engine will autoload all yaml files (ends with .yml or .yaml) in this directory. If there’s a file members.yml under the directory, then you can access contents of the file through site.data.members.</p>
 
+<h3 id="assets-content">Assets content</h3>
 
-    <div id="disqus_thread"></div>
-<script>
-/**
-  * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-  */
-/*
-   var disqus_config = function () {
-    this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-(function() { // DON'T EDIT BELOW THIS LINE
- var d = document, s = d.createElement('script');
- 
- s.src = '//liaaxyz.disqus.com/embed.js';
- 
- s.setAttribute('data-timestamp', +new Date());
- (d.head || d.body).appendChild(s);
- })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<p>Any directory in root directory which name not start with <code class="highlighter-rouge">_</code> will be copy to <code class="highlighter-rouge">_site</code> directory after building. So you can create one and things can be access via template variable: </p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>http://liaa.xyz/assets/screenshot.jpg
+</code></pre>
+</div>
+
+<h3 id="create-additional-pages">Create additional pages</h3>
+
+<p><a href="http://jekyllrb.com/docs/pages/#where-additional-pages-live">doc</a></p>
 
   </article>
-
 
 </div>
 
@@ -159,7 +123,7 @@
       </div>
 
       <div class="footer-col  footer-col-3">
-        <p class="text">liaa.xyz 是陈亮的个人网站.
+        <p class="text">liaa.xyz 是陈亮的个人网站.陈亮目前主要从事iOS开发
 </p>
       </div>
     </div>
