@@ -2,13 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>liaa write this blog</title>
-    <description>liaa.xyz 是陈亮的个人网站.陈亮目前主要从事iOS开发
+    <description>Hello World.  
 </description>
     <link>http://liaa.xyz/</link>
     <atom:link href="http://liaa.xyz/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Jun 2016 00:10:19 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Jun 2016 00:10:19 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Jun 2016 21:38:01 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Jun 2016 21:38:01 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>记一件鸡毛蒜皮的事</title>
+        <description>&lt;p&gt;人物: 我(老公) 她(老婆);&lt;/p&gt;
+
+&lt;p&gt;背景: 我对自己口袋里有多少钱从来不会仔细计数. 如果有现金从口袋里摸出来基本是这里放，那里放. 用多少剩多少自然心里没数. 到最后引发下面的争执.&lt;/p&gt;
+
+&lt;p&gt;她: 我放在钱包里面的2000块钱怎么没了? 我: 上次同学聚会我从里面拿来800. 其他的我不知道了. (因为过年，我边抢红包边回答.)&lt;/p&gt;
+
+&lt;p&gt;她: 那其他的钱呢，那可是2000块钱，其他的钱呢? 我: 我真不知道钱哪里去了，大概是我平时拿钱没注意用掉了，我真不知道了. (还在抢红包)&lt;/p&gt;
+
+&lt;p&gt;她: 你不知道，那钱怎么全部没有了? 我: 我没拿出去花.我真不知道. 我钱包里面还有钱，可能在那里面有一点.&lt;/p&gt;
+
+&lt;p&gt;她: 还是在问钱到底哪里去了. 我: (开始有点不耐烦了) 好了好了，都是我拿的. (双眼放空，麻木刷着电脑回到)&lt;/p&gt;
+
+&lt;p&gt;接下来我不想对着电脑了，开始离开电脑桌. 被她问”你去哪儿”, 我就顺便接了一句去找钱啊，然后把边上肯定不会放钱抽屉打开找.&lt;/p&gt;
+
+&lt;p&gt;然后剧情突然发生大转折她开始大发雷霆. 边说边推大概意思就是: “一下说你拿了800，一下说不知道,一下又说你全拿了，到底几个意思？”.&lt;/p&gt;
+
+&lt;p&gt;事后想想, 这次争执完全可以避免. 从这件事看出来自己不管是在生活习惯还是处理问题的方式上都有问题, 记录下来算是给自己一个警告.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 10 Feb 2016 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/ohters/%E8%AE%B0%E4%B8%80%E4%BB%B6%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E7%9A%84%E4%BA%8B.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/ohters/%E8%AE%B0%E4%B8%80%E4%BB%B6%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E7%9A%84%E4%BA%8B.html</guid>
+        
+        
+        <category>ohters</category>
+        
+      </item>
+    
+      <item>
+        <title>前端项目开发的几个场景</title>
+        <description>&lt;p&gt;这里总结我自己的前端项目开发的过程的几个场景.&lt;/p&gt;
+
+&lt;p&gt;用 npm script 的方式总结一下:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;写代码去了&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;release&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;发布到测试线上&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;realease&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &quot;发布到生产线上&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Thu, 03 Dec 2015 00:00:00 +0800</pubDate>
+        <link>http://liaa.xyz/ohters/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/ohters/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</guid>
+        
+        
+        <category>ohters</category>
+        
+      </item>
     
       <item>
         <title>英语词汇量测试记录(始于2015)</title>
@@ -228,7 +279,7 @@
       </item>
     
       <item>
-        <title>Travelling in SanYa</title>
+        <title>Sanya(三亚) travel blog</title>
         <description>&lt;p&gt;In 2015.05.03 me and my family have a trip to SanYa.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-good-parts&quot;&gt;The good parts:&lt;/h2&gt;
@@ -395,73 +446,6 @@ OC中的作用域大致可以分为以下几类:
         
         
         <category>cocoa</category>
-        
-      </item>
-    
-      <item>
-        <title>接下来5年我要做什么</title>
-        <description>&lt;p&gt;如果你想知道的话，那么5年内我想做的事情大概是这些：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;结婚生子，希望是好多好多孩子&lt;/li&gt;
-  &lt;li&gt;做一个很简单的创业项目：用户将自己喜爱的图片上传,我负责提供用户喜欢的表现形式处理图片然后送到用户手里&lt;/li&gt;
-  &lt;li&gt;参与一些普及教育和一些帮助学习的开发项目中&lt;/li&gt;
-  &lt;li&gt;学习数据挖掘处理相关的知识，并运用之&lt;/li&gt;
-  &lt;li&gt;英语水平达到不去误人子弟的程度，并且要参与英语教育相关的活动中去&lt;/li&gt;
-  &lt;li&gt;努力能成为一名&lt;del&gt;有核心竞争力的&lt;/del&gt;soho程序员&lt;/li&gt;
-  &lt;li&gt;学习日语&lt;/li&gt;
-  &lt;li&gt;去更多的地方&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;就是这些了。&lt;/p&gt;
-
-&lt;p&gt;等等还差了重要的一个:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;反省&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Thu, 12 Feb 2015 00:00:00 +0800</pubDate>
-        <link>http://liaa.xyz/%E6%88%91%E6%8E%A5%E4%B8%8B%E5%87%A0%E5%B9%B4%E6%83%B3%E5%81%9A%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E4%BA%8B%E6%83%85.html</link>
-        <guid isPermaLink="true">http://liaa.xyz/%E6%88%91%E6%8E%A5%E4%B8%8B%E5%87%A0%E5%B9%B4%E6%83%B3%E5%81%9A%E4%B8%8B%E9%9D%A2%E8%BF%99%E4%BA%9B%E4%BA%8B%E6%83%85.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>2015 计划</title>
-        <description>&lt;p&gt;2015年计划:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;调整身体状态: 体重, 睡眠, 作息&lt;/li&gt;
-  &lt;li&gt;补习Cocoa开发中与C语言相关的知识点&lt;/li&gt;
-  &lt;li&gt;完成designcode.io上的设计课程&lt;/li&gt;
-  &lt;li&gt;做一些设计相关的工作&lt;/li&gt;
-  &lt;li&gt;完成motion design课程&lt;/li&gt;
-  &lt;li&gt;英语词汇背诵,语法学习&lt;/li&gt;
-  &lt;li&gt;每月一篇英文blog&lt;/li&gt;
-  &lt;li&gt;用上iMac27 5K&lt;/li&gt;
-  &lt;li&gt;每月写一个与Core Animation相关的demo&lt;/li&gt;
-  &lt;li&gt;完成一个声音片段收集app, 并以0000ff的商标发布&lt;/li&gt;
-  &lt;li&gt;做一件T恤上面放一个emoji表情👻&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;干完正事回顾一下我的2014年.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;2月份开始了iOS开发,9月份第一个app上线&lt;/li&gt;
-  &lt;li&gt;11月公司的业务牵涉到法律问题接受相关调查&lt;/li&gt;
-  &lt;li&gt;11月在隔壁邻居的婚礼上做伴郎，第一次有了想结婚的想法&lt;/li&gt;
-  &lt;li&gt;12月份从第一家公司离职&lt;/li&gt;
-  &lt;li&gt;12月份加入一家新公司专职做iOS开发&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sat, 03 Jan 2015 00:00:00 +0800</pubDate>
-        <link>http://liaa.xyz/%E5%B1%95%E6%9C%9B2015.html</link>
-        <guid isPermaLink="true">http://liaa.xyz/%E5%B1%95%E6%9C%9B2015.html</guid>
-        
         
       </item>
     
