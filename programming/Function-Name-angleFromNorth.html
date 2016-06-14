@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>前端项目开发的几个场景</title>
+    <title>Function name: angleFromNorth</title>
     <meta name="description" content="Hello World.  
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://liaa.xyz/ohters/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html">
+    <link rel="canonical" href="http://liaa.xyz/programming/Function-Name-angleFromNorth.html">
 </head>
 
 
@@ -48,20 +48,28 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">前端项目开发的几个场景</h1>
-    <p class="post-meta">Dec 3, 2015</p>
+    <h1 class="post-title">Function name: angleFromNorth</h1>
+    <p class="post-meta">Jan 2, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>这里总结我自己的前端项目开发的过程的几个场景.</p>
+    <p>Recently I encount a nice method name from <a href="http://www.thinkandbuild.it/how-to-build-a-custom-control-in-ios/">Bitwaker post</a>, it look like this:</p>
 
-<p>用 npm script 的方式总结一下:</p>
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c">	float angleFromNorth(CGPoint p1, CGPoint p2)</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="nx">run</span> <span class="nx">dev</span> <span class="c1">// "写代码去了"</span>
+<p>and method implementation is like this:</p>
 
-<span class="nx">npm</span> <span class="nx">run</span> <span class="nx">pre</span><span class="o">-</span><span class="nx">release</span> <span class="c1">// "发布到测试线上"</span>
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c">	float angleFromNorth(CGPoint p1, CGPoint p2) {
+		float vx = p2.x - p1.x;
+		float vy = p2.y - p1.y;
+		double radians = atan2(vy, vx);
+		angle = 180.0 * radians / M_PI;
+		return angle;
+}</code></pre></figure>
 
-<span class="nx">npm</span> <span class="nx">run</span> <span class="nx">realease</span> <span class="c1">// "发布到生产线上"</span></code></pre></figure>
+<p><strong>The reason I love this name is:</strong></p>
+
+<p>Using <strong>fromNorth</strong> states clearly Y-axis’s oriention is upward. </p>
 
 
       <div id="disqus_thread"></div>

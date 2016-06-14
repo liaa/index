@@ -6,8 +6,8 @@
 </description>
     <link>http://liaa.xyz/</link>
     <atom:link href="http://liaa.xyz/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Jun 2016 21:38:01 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Jun 2016 21:38:01 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Jun 2016 21:42:17 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Jun 2016 21:42:17 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -53,11 +53,11 @@
 
 </description>
         <pubDate>Thu, 03 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://liaa.xyz/ohters/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</link>
-        <guid isPermaLink="true">http://liaa.xyz/ohters/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</guid>
+        <link>http://liaa.xyz/web/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/web/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</guid>
         
         
-        <category>ohters</category>
+        <category>web</category>
         
       </item>
     
@@ -272,9 +272,11 @@
 
 </description>
         <pubDate>Mon, 28 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://liaa.xyz/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</link>
-        <guid isPermaLink="true">http://liaa.xyz/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</guid>
+        <link>http://liaa.xyz/others/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/others/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</guid>
         
+        
+        <category>others</category>
         
       </item>
     
@@ -308,9 +310,11 @@
 
 </description>
         <pubDate>Fri, 29 May 2015 00:00:00 +0800</pubDate>
-        <link>http://liaa.xyz/Travelling-in-SanYa.html</link>
-        <guid isPermaLink="true">http://liaa.xyz/Travelling-in-SanYa.html</guid>
+        <link>http://liaa.xyz/others/Travelling-in-SanYa.html</link>
+        <guid isPermaLink="true">http://liaa.xyz/others/Travelling-in-SanYa.html</guid>
         
+        
+        <category>others</category>
         
       </item>
     
