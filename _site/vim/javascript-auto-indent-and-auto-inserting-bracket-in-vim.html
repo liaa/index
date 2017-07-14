@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Speaking Jekyll</title>
+    <title>Automatically indent and insert close bracket in Vim</title>
     <meta name="description" content="Hello World.  
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/speaking jekyll/">
+    <link rel="canonical" href="http://localhost:4000/vim/javascript-auto-indent-and-auto-inserting-bracket-in-vim.html">
 </head>
 
 
@@ -48,29 +48,45 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Speaking Jekyll</h1>
+    <h1 class="post-title">Automatically indent and insert close bracket in Vim</h1>
+    <p class="post-meta">Jul 14, 2017</p>
   </header>
 
   <article class="post-content">
-    <p>Notes of how to use <a href="http://jekyllrb.com/docs/structure/">Jeklly</a>.</p>
+    <h2 id="auto-indent">Auto indent</h2>
+<p>To make vim auto indent when you start a new line. Putting this to your .vimrc</p>
 
-<h3 id="providing-data-for-template-variable-as-sitedatamycustomdatas">Providing data for template variable as <code class="highlighter-rouge">site.data.myCustomDatas</code></h3>
-
-<p>Well-formatted site data should be placed here. The jekyll engine will autoload all yaml files (ends with .yml or .yaml) in this directory. If there’s a file members.yml under the directory, then you can access contents of the file through site.data.members.</p>
-
-<h3 id="assets-content">Assets content</h3>
-
-<p>Any directory in root directory which name not start with <code class="highlighter-rouge">_</code> will be copy to <code class="highlighter-rouge">_site</code> directory after building. So you can create one and things can be access via template variable:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>http://localhost:4000/assets/screenshot.jpg
+<div class="language-vim highlighter-rouge"><pre class="highlight"><code>  <span class="k">filetype</span> plugin indent <span class="k">on</span>
+  <span class="k">set</span> autoindent
 </code></pre>
 </div>
 
-<h3 id="create-additional-pages">Create additional pages</h3>
+<p>if you want more control over the indenting behavior:</p>
 
-<p><a href="http://jekyllrb.com/docs/pages/#where-additional-pages-live">doc</a></p>
+<div class="language-vim highlighter-rouge"><pre class="highlight"><code><span class="k">set</span> expandtab #use space instead of <span class="k">tab</span> character
+<span class="k">set</span> shiftwidth<span class="p">=</span><span class="m">4</span> #indenting <span class="k">is</span> <span class="m">4</span> spaces
+</code></pre>
+</div>
 
+<h2 id="auto-insert-close-bracket">Auto insert close bracket</h2>
+<p>If you want vim insert close bracket for you, install <a href="https://github.com/Raimondi/delimitMate">delimitMate</a></p>
+
+
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'kidliaacom'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </article>
+
 
 </div>
 
