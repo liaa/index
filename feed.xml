@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>liaa is blogging</title>
+    <title>chenliang is blogging</title>
     <description>Hello World.  
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 14 Jul 2017 17:14:20 +0800</pubDate>
-    <lastBuildDate>Fri, 14 Jul 2017 17:14:20 +0800</lastBuildDate>
+    <link>http://chengliang.rocks/</link>
+    <atom:link href="http://chengliang.rocks/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 28 Aug 2017 15:44:52 +0800</pubDate>
+    <lastBuildDate>Mon, 28 Aug 2017 15:44:52 +0800</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
@@ -32,8 +32,8 @@
 
 </description>
         <pubDate>Fri, 14 Jul 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/vim/javascript-auto-indent-and-auto-inserting-bracket-in-vim.html</link>
-        <guid isPermaLink="true">http://localhost:4000/vim/javascript-auto-indent-and-auto-inserting-bracket-in-vim.html</guid>
+        <link>http://chengliang.rocks/vim/javascript-auto-indent-and-auto-inserting-bracket-in-vim.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/vim/javascript-auto-indent-and-auto-inserting-bracket-in-vim.html</guid>
         
         
         <category>vim</category>
@@ -61,8 +61,8 @@
 &lt;p&gt;事后想想, 这次争执完全可以避免. 从这件事看出来自己不管是在生活习惯还是处理问题的方式上都有问题, 记录下来算是给自己一个警告.&lt;/p&gt;
 </description>
         <pubDate>Wed, 10 Feb 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/ohters/%E8%AE%B0%E4%B8%80%E4%BB%B6%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E7%9A%84%E4%BA%8B.html</link>
-        <guid isPermaLink="true">http://localhost:4000/ohters/%E8%AE%B0%E4%B8%80%E4%BB%B6%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E7%9A%84%E4%BA%8B.html</guid>
+        <link>http://chengliang.rocks/ohters/%E8%AE%B0%E4%B8%80%E4%BB%B6%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E7%9A%84%E4%BA%8B.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/ohters/%E8%AE%B0%E4%B8%80%E4%BB%B6%E9%B8%A1%E6%AF%9B%E8%92%9C%E7%9A%AE%E7%9A%84%E4%BA%8B.html</guid>
         
         
         <category>ohters</category>
@@ -83,8 +83,8 @@
 
 </description>
         <pubDate>Thu, 03 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/web/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</link>
-        <guid isPermaLink="true">http://localhost:4000/web/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</guid>
+        <link>http://chengliang.rocks/web/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/web/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9C%BA%E6%99%AF.html</guid>
         
         
         <category>web</category>
@@ -103,8 +103,8 @@
 目前用来背单词的工具: &lt;a href=&quot;http://langeasy.com.cn/mobile/lexis.jsp&quot;&gt;不背单词&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 30 Nov 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/english/%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E9%87%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95.html</link>
-        <guid isPermaLink="true">http://localhost:4000/english/%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E9%87%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95.html</guid>
+        <link>http://chengliang.rocks/english/%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E9%87%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/english/%E8%8B%B1%E8%AF%AD%E8%AF%8D%E6%B1%87%E9%87%8F%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95.html</guid>
         
         
         <category>english</category>
@@ -196,8 +196,8 @@
 
 </description>
         <pubDate>Thu, 05 Nov 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/web/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%BC%95%E8%B5%B7%E9%A1%B5%E9%9D%A2%E6%8A%96%E5%8A%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</link>
-        <guid isPermaLink="true">http://localhost:4000/web/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%BC%95%E8%B5%B7%E9%A1%B5%E9%9D%A2%E6%8A%96%E5%8A%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</guid>
+        <link>http://chengliang.rocks/web/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%BC%95%E8%B5%B7%E9%A1%B5%E9%9D%A2%E6%8A%96%E5%8A%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/web/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%BC%95%E8%B5%B7%E9%A1%B5%E9%9D%A2%E6%8A%96%E5%8A%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</guid>
         
         
         <category>web</category>
@@ -228,8 +228,8 @@
 
 </description>
         <pubDate>Fri, 09 Oct 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/web/AMD_CommonJS_Browser_global_module_pattern.html</link>
-        <guid isPermaLink="true">http://localhost:4000/web/AMD_CommonJS_Browser_global_module_pattern.html</guid>
+        <link>http://chengliang.rocks/web/AMD_CommonJS_Browser_global_module_pattern.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/web/AMD_CommonJS_Browser_global_module_pattern.html</guid>
         
         
         <category>web</category>
@@ -259,8 +259,8 @@
 
 </description>
         <pubDate>Mon, 28 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/web/NPM_tips.html</link>
-        <guid isPermaLink="true">http://localhost:4000/web/NPM_tips.html</guid>
+        <link>http://chengliang.rocks/web/NPM_tips.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/web/NPM_tips.html</guid>
         
         
         <category>web</category>
@@ -302,8 +302,8 @@
 
 </description>
         <pubDate>Mon, 28 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/others/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</link>
-        <guid isPermaLink="true">http://localhost:4000/others/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</guid>
+        <link>http://chengliang.rocks/others/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/others/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</guid>
         
         
         <category>others</category>
@@ -340,8 +340,8 @@
 
 </description>
         <pubDate>Fri, 29 May 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/others/Travelling-in-SanYa.html</link>
-        <guid isPermaLink="true">http://localhost:4000/others/Travelling-in-SanYa.html</guid>
+        <link>http://chengliang.rocks/others/Travelling-in-SanYa.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/others/Travelling-in-SanYa.html</guid>
         
         
         <category>others</category>
@@ -433,8 +433,8 @@ OC中的作用域大致可以分为以下几类:
  --&gt;
 </description>
         <pubDate>Sun, 10 May 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/cocoa/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html</link>
-        <guid isPermaLink="true">http://localhost:4000/cocoa/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html</guid>
+        <link>http://chengliang.rocks/cocoa/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/cocoa/OC-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B%E4%B9%8BStatic-Global.html</guid>
         
         
         <category>cocoa</category>
