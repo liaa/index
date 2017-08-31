@@ -6,9 +6,38 @@
 </description>
     <link>http://chengliang.rocks/</link>
     <atom:link href="http://chengliang.rocks/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 30 Aug 2017 23:09:21 +0800</pubDate>
-    <lastBuildDate>Wed, 30 Aug 2017 23:09:21 +0800</lastBuildDate>
+    <pubDate>Thu, 31 Aug 2017 21:25:07 +0800</pubDate>
+    <lastBuildDate>Thu, 31 Aug 2017 21:25:07 +0800</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
+    
+      <item>
+        <title>Tips about Java test in Eclipse</title>
+        <description>&lt;p&gt;Here are some tips that are useful when  doing Java testing in Eclipse editor.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Clearing coverage highlighting&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Click the “Remove all Sessions” button in the toolbar of the “Coverage” view.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/ZqSyttY.png&quot; alt=&quot;clearing coverage highlight in Eclipse editor&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Running test automatically&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Installing the &lt;a href=&quot;https://infinitest.github.io/doc/user_guide.html&quot;&gt;Infinitest&lt;/a&gt; plugin. It will automatically run test related to the Java class you currently working on.  You can find the infintest on the left bottom corner of Eclipse editor.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/GcPkQ5H.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 31 Aug 2017 00:00:00 +0800</pubDate>
+        <link>http://chengliang.rocks/programming/java/tdd/tips-about-java-test-in-eclipse.html</link>
+        <guid isPermaLink="true">http://chengliang.rocks/programming/java/tdd/tips-about-java-test-in-eclipse.html</guid>
+        
+        
+        <category>programming</category>
+        
+        <category>Java</category>
+        
+        <category>TDD</category>
+        
+      </item>
     
       <item>
         <title>Writing test for Java class</title>
@@ -456,44 +485,6 @@
         <pubDate>Mon, 28 Sep 2015 00:00:00 +0800</pubDate>
         <link>http://chengliang.rocks/others/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</link>
         <guid isPermaLink="true">http://chengliang.rocks/others/2015%E5%B9%B4%E7%9A%84%E6%9A%91%E5%81%87.html</guid>
-        
-        
-        <category>others</category>
-        
-      </item>
-    
-      <item>
-        <title>Sanya(三亚) travel blog</title>
-        <description>&lt;p&gt;In 2015.05.03 me and my family have a trip to SanYa.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-good-parts&quot;&gt;The good parts:&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Beautiful beach and sea.&lt;/li&gt;
-  &lt;li&gt;Holiday hotel is the second home.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;the-bad-parts&quot;&gt;The bad parts:&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Food. Not tasting good and expensive.&lt;/li&gt;
-  &lt;li&gt;Scenic spots. Not attractive and not develop well and expensive.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;advices&quot;&gt;Advices:&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Sea, beach and hotel is enough for a relexing holiday, do not go to scenic spots.&lt;/li&gt;
-  &lt;li&gt;If you don’t like the food outside the hotel, try some in the hotel.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/20150529/beach.JPG&quot; alt=&quot;beach&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/20150529/tree.JPG&quot; alt=&quot;tree&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/20150529/house.JPG&quot; alt=&quot;house&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 29 May 2015 00:00:00 +0800</pubDate>
-        <link>http://chengliang.rocks/others/Travelling-in-SanYa.html</link>
-        <guid isPermaLink="true">http://chengliang.rocks/others/Travelling-in-SanYa.html</guid>
         
         
         <category>others</category>
